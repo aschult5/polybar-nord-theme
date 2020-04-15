@@ -2,8 +2,10 @@
 
 [colors]
 background = #2E3440
+background-alt = #3b4252
 buffer = #3B4252
 foreground = #D8DEE9
+foreground-alt = #4c566a
 nord6 = #ECEFF4
 nord7 = #8FBCBB
 nord8 = #88C0D0

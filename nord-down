@@ -27,7 +27,7 @@ interval = 3
 
 format = <ramp-used> <label>
 
-label = %gb_used%/%gb_total%
+label = %gb_used%
 
 ramp-used-0 = 
 ramp-used-0-foreground = ${colors.success}
@@ -72,8 +72,25 @@ interval = 3
 
 format-connected = <label-connected>
 
-label-connected =  %downspeed:9%   %upspeed:9%
+label-connected =  %downspeed:5%
 label-connected-foreground = ${colors.success}
+
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /home
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+spacing = 2
+
+format-mounted = <label-mounted>
+label-mounted =  %percentage_used%%
+format-mounted-foreground = ${colors.nord7}
+
 
 [module/temperature]
 type = internal/temperature

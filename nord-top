@@ -1,4 +1,33 @@
 ; vim:ft=dosini
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state> <label-mode>
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+
+label-focused = %icon%
+label-focused-underline= ${colors.nord7}
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+label-monitor = %name%
+
 [module/i3]
 type = internal/i3
 
@@ -79,14 +108,16 @@ type = internal/date
 interval = 1.0
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %H:%M
-
-date-alt = %Y-%m-%d%
+date = %b-%d
+date-alt = %Y-%m-%d
+time = %H:%M
+time-alt = %H:%M:%S
 
 format = <label>
-label =  %date%
+label =  %date%    %time%
+label-foreground = ${colors.foreground}
 label-margin = 1
-label-underline = ${colors.nord8}
+; label-underline = ${colors.nord8}
 
 [module/battery]
 type = internal/battery
@@ -97,7 +128,7 @@ battery = ${config.battery-bat}
 adapter = ${config.battery-adp}
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.foreground}
+; format-charging-underline = ${colors.foreground}
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -105,18 +136,24 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.notify}
+; format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity>
+; format-discharging-underline = ${colors.notify}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.notify}
+ramp-capacity-0-foreground = ${colors.urgent}
+ramp-capacity-1-foreground = ${colors.warning}
+ramp-capacity-2-foreground = ${colors.warning}
+ramp-capacity-3-foreground = ${colors.notify}
+ramp-capacity-4-foreground = ${colors.success}
 
 label-full = 
 label-full-foreground = ${colors.success}
-label-full-underline = ${colors.success}
+; label-full-underline = ${colors.success}
 
 [module/keyboard]
 type = internal/xkeyboard
@@ -135,33 +172,32 @@ label-indicator-on-capslock-underline = ${colors.warning}
 ; Icons
 layout-icon-default = 
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 
-master-soundcard = ${config.master-soundcard}
-speaker-soundcard = ${config.speaker-soundcard}
-headphone-soundcard = ${config.headphone-soundcard}
+use-ui-max = false
 
-master-mixer = ${config.master-mixer}
+click-right = pavucontrol &
 
 ; Format 
-format-volume = <ramp-volume> <label-volume>
-format-volume-underline = ${colors.function}
+format-volume = <ramp-volume>
+; format-volume-underline = ${colors.function}
 
 label-muted =  muted
-label-muted-foreground = ${colors.urgent}
-label-muted-underline = ${colors.urgent}
+label-muted-foreground = ${colors.warning}
+; label-muted-underline = ${colors.warning}
 
 ramp-volume-0 = 
-ramp-volume-0-foreground = ${colors.success}
 ramp-volume-1 = 
-ramp-volume-1-foreground = ${colors.notify}
 ramp-volume-2 = 
-ramp-volume-2-foreground = ${colors.urgent}
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
 
-ramp-headphones-0 = 
-
-ramp-volume-foreground = ${colors.nord7}
+ramp-volume-foreground = ${colors.function}
+ramp-volume-6-foreground = ${colors.urgent}
+; ramp-volume-6-underline = ${colors.urgent}
 
 [module/backlight]
 type = internal/xbacklight
@@ -169,13 +205,17 @@ type = internal/xbacklight
 enable-scroll = true
 
 ; Format
-format = <ramp> <label>
-format-underline = ${colors.nord9}
+format = <ramp>
+; format-underline = #EBCB8B
 
-ramp-0 = 
+ramp-0 = 󰃞
+ramp-1 = 󰃟
+ramp-2 = 
 
 label = %{A1:$HOME/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
-ramp-foreground = ${colors.nord9}
+ramp-0-foreground = ${colors.nord9}
+ramp-1-foreground = ${colors.warning}
+ramp-2-foreground = ${colors.notify}
 
 [module/mpd]
 type = internal/mpd
@@ -188,7 +228,7 @@ format-online = <toggle> <icon-prev> <label-song> <icon-next> <icon-stop> | <bar
 format-paused = <toggle> <icon-prev> <label-song> <icon-next> <icon-stop>
 format-stopped =  <toggle>
 
-label-song-underline = ${colors.nord8}
+; label-song-underline = ${colors.nord8}
 label-song = %artist:0:10:...% - %title:0:10:...%
 
 icon-play = 
@@ -227,7 +267,7 @@ bar-progress-foreground-2 = ${colors.nord9}
 type = custom/text
 content = 
 content-foreground = ${colors.warning}
-content-underline = ${colors.warning}
+; content-underline = ${colors.warning}
 content-padding = 1
 
 click-left = ${config.notify-click-left}
@@ -244,19 +284,19 @@ format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
 label-disconnected = 
 label-disconnected-foreground = ${colors.urgent}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
+ramp-signal-0 = 󰤠
+ramp-signal-1 = 󰤢
+ramp-signal-2 = 󰤥
+ramp-signal-3 = 󰤨
 
 ramp-signal-0-foreground = ${colors.urgent}
-ramp-signal-0-underline = ${colors.urgent}
+; ramp-signal-0-underline = ${colors.urgent}
 
 ramp-signal-1-foreground = ${colors.notify}
-ramp-signal-1-underline = ${colors.notify}
+; ramp-signal-1-underline = ${colors.notify}
 
 ramp-signal-2-foreground = ${colors.nord7}
-ramp-signal-2-underline = ${colors.nord7}
+; ramp-signal-2-underline = ${colors.nord7}
 
 ramp-signal-3-foreground = ${colors.success}
-ramp-signal-3-underline = ${colors.success}
+; ramp-signal-3-underline = ${colors.success}
