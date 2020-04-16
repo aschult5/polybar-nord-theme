@@ -22,8 +22,7 @@ foreground = ${colors.foreground}
 
 line-size = ${config.line-size}
 
-padding-left = 5
-padding-right = 5
+padding = 4
 
 override-redirect = ${config.override-redirect}
 
@@ -42,7 +41,7 @@ modules-center = ${config.top-center}
 modules-right = ${config.top-right}
 
 tray-position = ${config.systray-top}
-tray-padding = 3
+tray-padding = 0
 tray-detached = false
 tray-maxsize = 22
 
@@ -67,7 +66,7 @@ foreground = ${colors.foreground}
 
 line-size = ${config.line-size}
 
-padding = 2
+padding = 4
 override-redirect = ${config.override-redirect}
 
 module-margin = 2
@@ -85,7 +84,7 @@ modules-left = ${config.bottom-left}
 modules-right = ${config.bottom-right}
 
 tray-position = ${config.systray-bottom}
-tray-padding = 3
+tray-padding = 0
 tray-detached = false
 tray-maxsize = 22
 
