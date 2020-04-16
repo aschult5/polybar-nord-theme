@@ -28,6 +28,14 @@ label-empty-padding = 2
 
 label-monitor = %name%
 
+[module/powermenu]
+type = custom/text
+content = 
+content-padding = 0
+content-background = ${colors.background}
+content-foreground = ${colors.urgent}
+click-left = $HOME/.config/polybar/scripts/sysmenu
+click-right = $HOME/.config/polybar/scripts/sysmenu
 
 [module/date]
 type = internal/date

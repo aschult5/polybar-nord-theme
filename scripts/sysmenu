@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Launch Rofi
+MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
+-me-select-entry '', \
+-me-accept-custom 'MousePrimary', \
+-markup-rows \
+-no-sidebar-mode \
+-bw 0 \
+-lines 4 \
+-line-padding 10 \
+-padding 10 \
+-width 10 \
+-xoffset -27 -yoffset 60 \
+-location 3 \
+<<< "<big></big> Lock|<big></big> Logout |<big></big> Reboot |<big></big> Shutdown ")"
+case "$MENU" in
+  ** ) $HOME/.local/bin/mylock ;;
+  ** ) bspc quit;;
+  ** ) systemctl reboot ;;
+  ** ) systemctl -i poweroff
+esac
+
+# More Options
+# -fullscreen \
