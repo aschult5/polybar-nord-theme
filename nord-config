@@ -17,7 +17,7 @@ override-redirect = false
 # Top modules
 top-left = bspwm
 top-center = date
-top-right = pulseaudio backlight network-short battery powermenu
+top-right = keyboard pulseaudio backlight network-short battery powermenu
 
 # Bottom modules
 bottom-left = filesystem network-detail
