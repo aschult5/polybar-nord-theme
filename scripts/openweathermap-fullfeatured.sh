@@ -35,9 +35,9 @@ get_duration() {
 
 }
 
-KEY="62628c16e6247d2c1caf0cb398a3dffa"
-CITY="Beijing"
-UNITS="metric"
+KEY=$OWM_KEY
+CITY="5330222"
+UNITS="imperial"
 SYMBOL="°"
 
 API="https://api.openweathermap.org/data/2.5"
@@ -72,11 +72,11 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
 
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
-        trend=""
+        trend=""
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
-        trend=""
+        trend=""
     else
-        trend=""
+        trend=""
     fi
 
 

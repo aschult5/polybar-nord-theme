@@ -111,6 +111,7 @@ ramp-4-foreground = ${colors.warning}
 [module/weather]
 type = custom/script
 exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
+exec-if = ping openweathermap.org -c 1 && test -n $OWM_KEY
 interval = 600
+label-font = 6
 
-label-font = 4

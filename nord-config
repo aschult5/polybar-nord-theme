@@ -21,7 +21,7 @@ top-right = pulseaudio backlight network-short battery powermenu
 
 # Bottom modules
 bottom-left = filesystem network-detail
-# bottom-center = daily-poem
+bottom-center = weather
 bottom-right = temperature memory cpu
 
 systray-top = none
