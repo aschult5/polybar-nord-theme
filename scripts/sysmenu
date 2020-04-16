@@ -11,7 +11,8 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -line-padding 10 \
 -padding 10 \
 -width 10 \
--xoffset -27 -yoffset 60 \
+-height 20 \
+-xoffset -10 -yoffset 42 \
 -location 3 \
 <<< "<big></big> Lock|<big></big> Logout |<big></big> Reboot |<big></big> Shutdown ")"
 case "$MENU" in
