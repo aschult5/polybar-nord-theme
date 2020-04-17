@@ -17,12 +17,12 @@ override-redirect = false
 # Top modules
 top-left = bspwm
 top-center = date
-top-right = keyboard pulseaudio backlight network-short battery powermenu
+top-right = keyboard pulseaudio network-short battery powermenu
 
 # Bottom modules
-bottom-left = filesystem network-detail
+bottom-left = 
 bottom-center = weather
-bottom-right = temperature memory cpu
+bottom-right = network-detail cpu memory temperature filesystem
 
 systray-top = none
 systray-bottom = left
