@@ -153,8 +153,8 @@ interface = ${config.interface}
 
 interval = 1
 
-format-connected = %{A1:networkmanager_dmenu:}<ramp-signal>%{A}
-format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
+format-connected = %{A1:nmcli-rofi:}<ramp-signal>%{A}
+format-disconnected = %{A1:nmcli-rofi:}<label-disconnected>%{A}
 
 label-disconnected = 󰖪
 label-disconnected-foreground = ${colors.urgent}
