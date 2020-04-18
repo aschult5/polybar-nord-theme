@@ -17,7 +17,7 @@ radius = ${config.radius}
 fixed-center = ${config.fixed-center}
 dpi = ${config.dpi}
 
-background = ${colors.background}
+background = ${colors.background-trans}
 foreground = ${colors.foreground}
 
 line-size = ${config.line-size}
@@ -60,7 +60,7 @@ fixed-center = ${config.fixed-center}
 bottom = true
 dpi = ${config.dpi}
 
-background = ${colors.background}
+background = ${colors.background-trans}
 foreground = ${colors.foreground}
 
 line-size = ${config.line-size}

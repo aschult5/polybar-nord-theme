@@ -3,6 +3,7 @@
 [colors]
 nord0 = #2E3440
 background = ${colors.nord0}
+background-trans = #E02E3440
 nord1 = #3B4252
 background-alt = ${colors.nord1}
 buffer = ${colors.nord1}
