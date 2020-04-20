@@ -5,19 +5,19 @@ interval = 1
 
 format = <ramp-load> <label>
 
-ramp-load-0 = 
+ramp-load-0 = 
 ramp-load-0-foreground = ${colors.foreground}
 
-ramp-load-1 = 
+ramp-load-1 = 
 ramp-load-1-foreground = ${colors.foreground}
 
-ramp-load-2 = 
+ramp-load-2 = 
 ramp-load-2-foreground = ${colors.notify}
 
-ramp-load-3 = 
+ramp-load-3 = 
 ramp-load-3-foreground = ${colors.warning}
 
-ramp-load-4 = 
+ramp-load-4 = 
 ramp-load-4-foreground = ${colors.urgent}
 
 [module/memory]
@@ -28,25 +28,25 @@ format = <ramp-used> <label>
 
 label = %gb_used%
 
-ramp-used-0 = 
+ramp-used-0 = 
 ramp-used-0-foreground = ${colors.foreground}
 
-ramp-used-1 = 
+ramp-used-1 = 
 ramp-used-1-foreground = ${colors.foreground}
 
-ramp-used-2 = 
+ramp-used-2 = 
 ramp-used-2-foreground = ${colors.foreground}
 
-ramp-used-3 = 
+ramp-used-3 = 
 ramp-used-3-foreground = ${colors.foreground}
 
-ramp-used-4 = 
+ramp-used-4 = 
 ramp-used-4-foreground = ${colors.notify}
 
-ramp-used-5 = 
+ramp-used-5 = 
 ramp-used-5-foreground = ${colors.warning}
 
-ramp-used-6 = 
+ramp-used-6 = 
 ramp-used-6-foreground = ${colors.urgent}
 
 [module/network-detail]
@@ -112,5 +112,4 @@ type = custom/script
 exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 exec-if = ping openweathermap.org -c 1 && test -n $OWM_KEY
 interval = 600
-label-font = 6
 
