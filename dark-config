@@ -64,6 +64,7 @@ foreground = ${colors.foreground}
 line-size = ${config.line-size}
 
 padding-right = 2
+padding-left = 2
 override-redirect = ${config.override-redirect}
 
 module-margin = 2

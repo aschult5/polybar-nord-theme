@@ -17,25 +17,18 @@ override-redirect = false
 # Top modules
 top-left = bspwm
 top-center = date
-top-right = keyboard pulseaudio network-short battery powermenu
+top-right =
 
 # Bottom modules
-bottom-left = 
+bottom-left = filesystem temperature cpu memory
 bottom-center = weather
-bottom-right = network-detail cpu memory temperature filesystem
+bottom-right = keyboard battery powermenu
 
-systray-top = none
-systray-bottom = left
+systray-top = right
+systray-bottom = none
 
 # global style
 line-size = 4
-
-# Modules configure option
-# the default value in this section should work in most cases,
-# if some of them doesn't suit your environment, you can change
-# it from here.
-# network interface, check by `ip link show`
-interface = wlp2s0
 
 # when the current battery capacity excess this value,
 # the full-capacity format will be displayed.
