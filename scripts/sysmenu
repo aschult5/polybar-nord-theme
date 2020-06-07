@@ -7,17 +7,18 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -markup-rows \
 -no-sidebar-mode \
 -bw 0 \
--lines 4 \
+-lines 5 \
 -line-padding 10 \
 -padding 10 \
 -width 10 \
 -height 20 \
--xoffset -10 -yoffset 42 \
--location 3 \
-<<< "<big></big> Lock|<big></big> Logout |<big></big> Reboot |<big></big> Shutdown ")"
+-xoffset 0 -yoffset -34 \
+-location 5 \
+<<< "<big></big> Lock|<big></big> Logout |<big></big> Sleep |<big></big> Reboot |<big></big> Shutdown ")"
 case "$MENU" in
-  ** ) $HOME/.local/bin/mylock ;;
+  ** ) dm-tool lock ;;
   ** ) bspc quit;;
+  ** ) systemctl suspend ;;
   ** ) systemctl reboot ;;
   ** ) systemctl -i poweroff
 esac
