@@ -20,7 +20,7 @@ top-center = date
 top-right =
 
 # Bottom modules
-bottom-left = filesystem temperature cpu memory
+bottom-left = filesystem temperature memory cpu network-detail
 bottom-center = weather
 bottom-right = keyboard battery powermenu
 
@@ -43,3 +43,5 @@ thermal-zone = 0
 base-temperature = 20
 # Threshold temperature to display warning label (in degrees celsius)
 warn-temperature = 60
+
+interface = enp0s31f6
